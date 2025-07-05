@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | FitTrack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/icons/website-icon.webp">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --bs-primary: #4da6ff;     /* Soft sky blue */
+            --bs-secondary: #7fbfff;   /* Light steel blue */
+            --bs-success: #5cd6c0;     /* Aqua green */
+            --bs-info: #66d9ff;        /* Bright cyan */
+            --bs-warning: #ffd166;     /* Soft yellow */
+            --bs-danger: #ff6b6b;      /* Coral red */
+            --bs-light: #f0f8ff;       /* Alice blue */
+            --bs-dark: #2c3e50;        /* Deep navy */
+        }
+        body {
+            background: linear-gradient(135deg, var(--bs-light) 60%, #fffbe7 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+        .login-card {
+            border: none;
+            border-radius: 1.25rem;
+            box-shadow: 0 8px 32px 0 rgba(77,166,255,0.13), 0 1.5px 8px 0 rgba(44,62,80,0.08);
+            background: #fff;
+            padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+            max-width: 480px;
+            width: 100%;
+            margin: 2.5rem auto;
+        }
+        .login-icon {
+            background: linear-gradient(135deg, var(--bs-primary) 60%, var(--bs-success) 100%);
+            color: #fff;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.7rem auto;
+            box-shadow: 0 4px 18px 0 rgba(77,166,255,0.13);
+        }
+        .login-card h2 {
+            color: var(--bs-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem !important;
+        }
+        .login-card p {
+            font-size: 1rem;
+            margin-bottom: 1rem !important;
+        }
+        .form-label {
+            font-weight: 500;
+            color: var(--bs-dark);
+            font-size: 0.97rem;
+            margin-bottom: 0.2rem;
+        }
+        .form-control {
+            border-radius: 0.65rem;
+            border: 1.5px solid var(--bs-light);
+            background: var(--bs-light);
+            color: var(--bs-dark);
+            font-size: 0.97rem;
+            padding: 0.45rem 0.75rem;
+            min-height: 38px;
+        }
+        .form-control:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 0.12rem rgba(77,166,255,.13);
+            background: #fff;
+        }
+        .login-btn {
+            background: linear-gradient(90deg, var(--bs-primary) 60%, var(--bs-success) 100%);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 12px 0 rgba(77,166,255,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            font-size: 1rem;
+            padding: 0.6rem 0;
+        }
+        .login-btn:hover, .login-btn:focus {
+            background: var(--bs-light);
+            color: var(--bs-primary);
+            border: 1px solid var(--bs-primary);
+        }
+        .login-link {
+            color: var(--bs-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+            color: var(--bs-dark);
+        }
+        .forgot-link {
+            color: var(--bs-info);
+            text-decoration: none;
+            font-size: 0.97rem;
+            font-weight: 500;
+        }
+        .forgot-link:hover {
+            text-decoration: underline;
+            color: var(--bs-primary);
+        }
+        .text-center.mt-2 {
+            margin-top: 0.7rem !important;
+        }
+        @media (max-width: 500px) {
+            .login-card {
+                padding: 1rem 0.3rem 0.7rem 0.3rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="login-card shadow-lg">
+            <div class="login-icon mb-3">
+                <i class="bi bi-person-circle"></i>
+            </div>
+            <h2 class="fw-bold text-center mb-2">Login</h2>
+            <p class="text-center text-muted mb-4">Sign in to your FitTrack account</p>
+            <form>
+                <div class="mb-3">
+                    <label for="loginEmail" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="you@email.com" required>
+                </div>
+                <div class="mb-2">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe" style="font-size:0.97rem;">Remember me</label>
+                    </div>
+                    <a href="javascript:void(0)" class="forgot-link" onclick="showForgotModal()">Forgot password?</a>
+                </div>
+                <div class="d-grid mb-2">
+                    <button type="submit" class="btn login-btn btn-lg rounded-pill shadow-sm">Login</button>
+                </div>
+            </form>
+            <div class="text-center mt-2">
+                <span class="text-muted">Don't have an account?</span>
+                <a href="register.html" class="login-link ms-1">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius:1.2rem; box-shadow:0 8px 32px 0 rgba(77,166,255,0.13);">
+          <div class="modal-header" style="background: linear-gradient(90deg, var(--bs-primary) 60%, var(--bs-info) 100%); border-top-left-radius:1.2rem; border-top-right-radius:1.2rem;">
+            <h5 class="modal-title text-white" id="forgotModalLabel"><i class="bi bi-envelope-paper-fill me-2"></i>Forgot Password</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="background: var(--bs-light);">
+            <p class="mb-3">Enter your email address and we'll send you a link to reset your password.</p>
+            <form>
+              <div class="mb-3">
+                <label for="forgotEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="forgotEmail" placeholder="you@email.com" required>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-info rounded-pill text-white fw-bold">Send Reset Link</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer" style="background: var(--bs-light); border-bottom-left-radius:1.2rem; border-bottom-right-radius:1.2rem;">
+            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Show forgot password modal
+      function showForgotModal() {
+        var forgotModal = new bootstrap.Modal(document.getElementById('forgotModal'));
+        forgotModal.show();
+      }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

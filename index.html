@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/website-icon.webp">
+    <!-- Bootstrap 5 CDN (add to your <head> if not already included) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN (if not already included) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Custom CSS (optional) -->
+    <style>
+
+        /* Custom styles for the landing page */
+        :root {
+            --bs-primary: #4da6ff;     /* Soft sky blue */
+            --bs-secondary: #7fbfff;   /* Light steel blue */
+            --bs-success: #5cd6c0;     /* Aqua green */
+            --bs-info: #66d9ff;        /* Bright cyan */
+            --bs-warning: #ffd166;     /* Soft yellow */
+            --bs-danger: #ff6b6b;      /* Coral red */
+            --bs-light: #f0f8ff;       /* Alice blue */
+            --bs-dark: #2c3e50;        /* Deep navy */
+        }
+        body {
+            background: var(--bs-secondary);
+            color: var(--bs-light);
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-nav .nav-link {
+            transition: color 0.2s, background 0.2s;
+            border-radius: 0.5rem;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--bs-primary) !important;
+            background: var(--bs-light);
+            text-decoration: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--bs-secondary) 70%, var(--bs-info) 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top" style="background-color: var(--bs-primary);">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center"
+                href="#"
+                style="color: var(--bs-light);"
+                onclick="showSection('hero', document.querySelector('.navbar-nav .nav-link[onclick*=\'hero\']'))">
+                <img src="assets/icons/Logo.png" alt="FitTrack Logo" width="40" class="me-2">
+                Fit<span style="color: var(--bs-info);">Track</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-light" href="#" onclick="showSection('hero', this)">Home</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-light" href="#" onclick="showSection('features', this)">Features</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-light" href="#" onclick="showSection('community', this)">Community</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-light" href="#" onclick="showSection('videos', this)">Videos</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-light" href="#" onclick="showSection('nutrition', this)">Nutrition</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn btn-outline-light me-2 px-4 rounded-pill">Login</a>
+                    <a href="register.html" class="btn btn-info text-white px-4 rounded-pill">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero py-5" id="hero" style="background: var(--bs-light);">
+            <div class="container">
+
+                <div class="row align-items-center">
+                    <!-- Left Side: Text Content -->
+                    <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                        <h1 class="display-4 fw-bold" style="color: var(--bs-primary);">
+                            Track Your Fitness Goals with Ease
+                        </h1>
+                        <p class="lead" style="color: var(--bs-dark);">
+                            Stay motivated, monitor progress, and crush your health goals — all in one place.
+                        </p>
+                        <a href="register.html" class="btn btn-info btn-lg mt-3 px-5 rounded-pill text-white shadow">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Get Started
+                        </a>
+                    </div>
+                    <!-- Right Side: Image -->
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <img src="assets/images/can-anyone-become-a-fitness-model.png" alt="FitTrack Dashboard" class="img-fluid" style="max-height: 480px;">
+                    </div>
+                </div>
+
+                <h4 class=" mt-5" style="color: var(--bs-dark);"><i class="bi bi-star-fill me-2"></i>Why Choose FitTrack?</h4>
+
+                <!-- Value Proposition -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-4 p-4">
+                            <div class="flex-fill text-center" style="color: var(--bs-dark);">
+                                <i class="bi bi-bar-chart-line-fill display-5 mb-3" style="color: var(--bs-info);"></i>
+                                <h5 class="fw-bold">Easy-to-Use Tracking</h5>
+                                <p class="mb-0">Log workouts, monitor progress, and stay consistent with intuitive tools.</p>
+                            </div>
+                            <div class="flex-fill text-center" style="color: var(--bs-dark);">
+                                <i class="bi bi-people-fill display-5 mb-3" style="color: var(--bs-info);"></i>
+                                <h5 class="fw-bold">Community & Challenges</h5>
+                                <p class="mb-0">Join fitness challenges and connect with others on the same journey.</p>
+                            </div>
+                            <div class="flex-fill text-center" style="color: var(--bs-dark);">
+                                <i class="bi bi-heart-pulse-fill display-5 mb-3" style="color: var(--bs-info);"></i>
+                                <h5 class="fw-bold">Nutrition & Resources</h5>
+                                <p class="mb-0">Access meal plans, workout guides, and expert tips to fuel your goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visuals or Demo -->
+                <div class="row align-items-center justify-content-center mt-4">
+                    <div class="col-12">
+                        <div class="p-4" style="background: var(--bs-light);">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 mb-4 mb-lg-0">
+                                    <img src="assets/images/mockup1.webp" alt="App Mockup" class="img-fluid rounded" style="min-height: 400px;">
+                                </div>
+                                <div class="col-lg-6">
+                                    <h4 class="fw-bold mb-3" style="color: var(--bs-dark);"><i class="bi bi-play-circle-fill me-2"></i>See FitTrack in Action</h4>
+                                    <p class="text-muted">Watch how FitTrack helps users stay on top of their fitness goals with a sleek, responsive dashboard.</p>
+                                    <video controls class="ratio ratio-16x9 rounded w-100">
+                                        <source src="assets/images/How to Do_PUSH-UPS(720P_HD).mp4" title="FitTrack Demo Video" allowfullscreen>
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4" style="color: var(--bs-dark);">
+                    <i class="bi bi-lightbulb-fill me-2"></i>Why FitTrack Works?
+                </h4>
+
+                <!-- Why FitTrack Works (Science-Backed Benefits) -->
+                <div class="row justify-content-center mt-4 mb-5">
+                    <div class="col-12">
+                        <div class="p-4 p-lg-1" style="background: var(--bs-light);">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <div class="mb-3">
+                                        <span style="font-size:2.5rem;">🧬</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2" style="color: var(--bs-primary);">Science-Backed Habits</h5>
+                                    <p class="text-muted mb-0">Habit formation backed by behavioral science for lasting results.</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="mb-3">
+                                        <span style="font-size:2.5rem;">🧠</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2" style="color: var(--bs-primary);">Psychology of Consistency</h5>
+                                    <p class="text-muted mb-0">Stay motivated with proven strategies that make fitness a lifestyle.</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="mb-3">
+                                        <span style="font-size:2.5rem;">📊</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2" style="color: var(--bs-primary);">Data-Driven Insights</h5>
+                                    <p class="text-muted mb-0">Get personalized, data-driven insights to optimize your routine.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-4 p-4" style="background: var(--bs-info);">
+                            <div class="flex-fill text-center">
+                                <i class="bi bi-chat-left-quote-fill display-5 text-white mb-3"></i>
+                                <blockquote class="blockquote">
+                                    <p class="mb-2">“FitTrack helped me stay consistent and finally hit my fitness goals!”</p>
+                                    <footer class="blockquote-footer text-muted mt-2">Alex R., <cite title="Source Title">Verified User</cite></footer>
+                                </blockquote>
+                            </div>
+                            <div class="flex-fill text-center d-flex flex-column justify-content-center">
+                                <i class="bi bi-graph-up-arrow display-5 text-white mb-3"></i>
+                                <h5 class="fw-bold mb-1">10,000+ Users</h5>
+                                <p class="text-muted mb-0">Join thousands of fitness enthusiasts already tracking their progress with FitTrack.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expert Tips & Articles Section -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-12">
+                        <div class="p-4 p-lg-2 rounded-4" style="background: var(--bs-light);">
+                            <h4 class="fw-bold mb-4" style="color: var(--bs-dark);">
+                                <i class="bi bi-mortarboard-fill me-2"></i>Expert Tips & Articles
+                            </h4>
+                            <div class="row g-4" id="expertArticles">
+                                <!-- Article Cards -->
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="h-100 text-center px-3 py-4 rounded-4" style="background: #fff; border: 1px solid var(--bs-info);">
+                                        <i class="bi bi-lightning-charge-fill fs-2 text-info mb-2"></i>
+                                        <h6 class="fw-bold mb-2" style="color: var(--bs-primary);">Fitness Tips</h6>
+                                        <p class="text-muted mb-3 small">Discover effective workout routines and strategies to maximize your results.</p>
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-info rounded-pill" onclick="showSection('article-fitness')">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="h-100 text-center px-3 py-4 rounded-4" style="background: #fff; border: 1px solid var(--bs-warning);">
+                                        <i class="bi bi-egg-fried fs-2 text-warning mb-2"></i>
+                                        <h6 class="fw-bold mb-2" style="color: var(--bs-primary);">Nutrition Advice</h6>
+                                        <p class="text-muted mb-3 small">Get expert advice on meal planning, healthy recipes, and balanced nutrition.</p>
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-info rounded-pill" onclick="showSection('article-nutrition')">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="h-100 text-center px-3 py-4 rounded-4" style="background: #fff; border: 1px solid var(--bs-success);">
+                                        <i class="bi bi-emoji-smile-fill fs-2 text-success mb-2"></i>
+                                        <h6 class="fw-bold mb-2" style="color: var(--bs-primary);">Mental Health</h6>
+                                        <p class="text-muted mb-3 small">Learn how to stay motivated, manage stress, and build a positive mindset.</p>
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-info rounded-pill" onclick="showSection('article-mental')">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="h-100 text-center px-3 py-4 rounded-4" style="background: #fff; border: 1px solid var(--bs-primary);">
+                                        <i class="bi bi-journal-richtext fs-2 text-primary mb-2"></i>
+                                        <h6 class="fw-bold mb-2" style="color: var(--bs-primary);">Motivation & More</h6>
+                                        <p class="text-muted mb-3 small">Explore articles on goal setting, overcoming plateaus, and staying on track.</p>
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-info rounded-pill" onclick="showSection('article-motivation')">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="article-fitness" class="py-5" style="background: var(--bs-light); display:none;">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <i class="bi bi-lightning-charge-fill fs-1 text-info mb-2"></i>
+                    <h2 class="fw-bold" style="color: var(--bs-primary);">Fitness Tips & Best Practices</h2>
+                    <p class="lead text-muted mb-0" style="max-width: 600px; margin: 0 auto; font-size: 1rem;">
+                        Unlock your full potential with these expert-backed fitness strategies. Whether you're a beginner or a seasoned athlete, these tips will help you train smarter, stay motivated, and achieve lasting results.
+                    </p>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/fitness-warmups.jpg" alt="Warm Up" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-fire me-2 text-info"></i>Warm Up & Cool Down</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><strong>Dynamic Warm-Up:</strong> Prepare your body with light cardio and mobility drills before every workout.</li>
+                                    <li><strong>Stretching:</strong> End sessions with static stretches to improve flexibility and reduce soreness.</li>
+                                </ul>
+                                <button class="btn btn-outline-info btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#fitnessModal1">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/fitness-progressive.jpg" alt="Progressive Overload" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-graph-up-arrow me-2 text-info"></i>Progressive Overload</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><strong>Increase Intensity:</strong> Gradually add weight, reps, or sets to challenge your muscles.</li>
+                                    <li><strong>Track Progress:</strong> Use FitTrack to monitor your improvements and set new goals.</li>
+                                </ul>
+                                <button class="btn btn-outline-info btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#fitnessModal2">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/fitness-balanse.jpg" alt="Variety & Balance" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-shuffle me-2 text-info"></i>Variety & Balance</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><strong>Mix Workouts:</strong> Combine strength, cardio, HIIT, and flexibility routines for overall fitness.</li>
+                                    <li><strong>Prevent Plateaus:</strong> Change up your exercises every few weeks to keep progressing.</li>
+                                </ul>
+                                <button class="btn btn-outline-info btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#fitnessModal3">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/fitness-rest.jpg" alt="Rest & Recovery" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-moon-stars-fill me-2 text-info"></i>Rest & Recovery</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><strong>Listen to Your Body:</strong> Schedule rest days and get enough sleep for muscle repair.</li>
+                                    <li><strong>Active Recovery:</strong> Try light activities like walking or yoga on rest days.</li>
+                                </ul>
+                                <button class="btn btn-outline-info btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#fitnessModal4">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-info rounded-4 shadow-sm text-center mb-0">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Pro Tip:</strong> Consistency beats perfection. Small, regular efforts lead to big results over time!
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="javascript:void(0)" class="btn btn-outline-warning rounded-pill" onclick="showSection('article-nutrition')">
+                        <i class="bi bi-egg-fried me-1"></i>Nutrition Advice
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-success rounded-pill" onclick="showSection('article-mental')">
+                        <i class="bi bi-emoji-smile-fill me-1"></i>Mental Health
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-primary rounded-pill" onclick="showSection('article-motivation')">
+                        <i class="bi bi-journal-richtext me-1"></i>Motivation & More
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Fitness Article Modals -->
+        <div class="modal fade" id="fitnessModal1" tabindex="-1" aria-labelledby="fitnessModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-info); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="fitnessModal1Label"><i class="bi bi-fire me-2"></i>Warm Up & Cool Down</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/fitness-warmups.jpg" alt="Warm Up" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Dynamic Warm-Up:</strong> Start with 5-10 minutes of light cardio (jogging, jumping jacks) and mobility drills to increase blood flow and prep your joints.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Cool Down:</strong> End every session with static stretching, focusing on major muscle groups. This helps reduce soreness and improve flexibility.</p>
+                        <ul class="text-muted">
+                            <li>Never skip your warm-up or cool-down!</li>
+                            <li>Try foam rolling for extra recovery.</li>
+                            <li>Use FitTrack to log your warm-up and cool-down routines.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your warm-up and cool-down routines, ensuring you stay consistent and effective.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="fitnessModal2" tabindex="-1" aria-labelledby="fitnessModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-info); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="fitnessModal2Label"><i class="bi bi-graph-up-arrow me-2"></i>Progressive Overload</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/fitness-progressive.jpg" alt="Progressive Overload" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Increase Intensity:</strong> Add weight, reps, or sets gradually to challenge your muscles and avoid plateaus.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Progress:</strong> Use FitTrack to log your workouts and see your improvements over time.</p>
+                        <ul class="text-muted">
+                            <li>Change only one variable at a time (weight, reps, or sets).</li>
+                            <li>Listen to your body and avoid overtraining.</li>
+                            <li>Set realistic goals and celebrate small wins!</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your performance and adjust your training plan as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="fitnessModal3" tabindex="-1" aria-labelledby="fitnessModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-info); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="fitnessModal3Label"><i class="bi bi-shuffle me-2"></i>Variety & Balance</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/fitness-balanse.jpg" alt="Variety & Balance" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Mix Workouts:</strong> Try different training styles (strength, HIIT, yoga, cardio) to keep things interesting and well-rounded.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Prevent Plateaus:</strong> Change your routine every 4-6 weeks to keep progressing.</p>
+                        <ul class="text-muted">
+                            <li>Join group classes or try new activities for fun!</li>
+                            <li>Balance your routine with strength, cardio, and flexibility work.</li>
+                            <li>Use FitTrack to plan and track your varied workouts.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your performance and adjust your training plan as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="fitnessModal4" tabindex="-1" aria-labelledby="fitnessModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-info); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="fitnessModal4Label"><i class="bi bi-moon-stars-fill me-2"></i>Rest & Recovery</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/fitness-rest.jpg" alt="Rest & Recovery" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Listen to Your Body:</strong> Take at least 1-2 rest days per week. Quality sleep is essential for muscle repair and growth.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Active Recovery:</strong> On rest days, do light activities like walking, stretching, or yoga.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to schedule rest and recovery days.</li>
+                            <li>Consider foam rolling or massage for muscle soreness.</li>
+                            <li>Stay hydrated and maintain a balanced diet to support recovery.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your recovery and adjust your training plan as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section id="article-nutrition" class="py-5" style="background: var(--bs-light); display:none;">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <i class="bi bi-egg-fried fs-1 text-warning mb-2"></i>
+                    <h2 class="fw-bold" style="color: var(--bs-primary);">Nutrition Advice</h2>
+                    <p class="lead text-muted mb-0" style="max-width: 600px; margin: 0 auto;">
+                        Fuel your body with the right nutrients. These nutrition tips will help you eat smarter, feel better, and reach your goals.
+                    </p>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/nutrition-balance.jpg" alt="Balanced Meals" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-warning);"><i class="bi bi-egg-fried me-2"></i>Balanced Meals</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Include protein, complex carbs, and healthy fats in every meal.</li>
+                                    <li>Fill half your plate with vegetables and fruits.</li>
+                                </ul>
+                                <button class="btn btn-outline-warning btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#nutritionModal1">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/nutrition-hydration.jpg" alt="Hydration" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-warning);"><i class="bi bi-droplet-half me-2"></i>Hydration</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Drink at least 8 glasses of water daily.</li>
+                                    <li>Stay hydrated before, during, and after workouts.</li>
+                                </ul>
+                                <button class="btn btn-outline-warning btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#nutritionModal2">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/nutrition-mealprep.jpg" alt="Meal Prep" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-warning);"><i class="bi bi-calendar-check me-2"></i>Meal Prep</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Plan and prepare meals ahead to avoid unhealthy choices.</li>
+                                    <li>Batch cook and portion meals for the week.</li>
+                                </ul>
+                                <button class="btn btn-outline-warning btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#nutritionModal3">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/nutrition-mindful.jpg" alt="Mindful Eating" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-warning);"><i class="bi bi-emoji-heart-eyes me-2"></i>Mindful Eating</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Eat slowly and savor your food.</li>
+                                    <li>Listen to your body’s hunger and fullness cues.</li>
+                                </ul>
+                                <button class="btn btn-outline-warning btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#nutritionModal4">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-warning rounded-4 shadow-sm text-center mb-0">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Tip:</strong> Prep healthy snacks to avoid temptation and stay on track!
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="javascript:void(0)" class="btn btn-outline-info rounded-pill" onclick="showSection('article-fitness')">
+                        <i class="bi bi-lightning-charge-fill me-1"></i>Fitness Tips
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-success rounded-pill" onclick="showSection('article-mental')">
+                        <i class="bi bi-emoji-smile-fill me-1"></i>Mental Health
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-primary rounded-pill" onclick="showSection('article-motivation')">
+                        <i class="bi bi-journal-richtext me-1"></i>Motivation & More
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nutrition Article Modals -->
+        <div class="modal fade" id="nutritionModal1" tabindex="-1" aria-labelledby="nutritionModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-warning); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="nutritionModal1Label"><i class="bi bi-egg-fried me-2"></i>Balanced Meals</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/nutrition-balance.jpg" alt="Balanced Meals" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Balance is key:</strong> Each meal should have lean protein, complex carbs, healthy fats, and plenty of veggies.</p>
+                        <ul class="text-muted">
+                            <li>Try the "plate method": 1/2 veggies, 1/4 protein, 1/4 carbs.</li>
+                            <li>Limit processed foods and added sugars.</li>
+                            <li>Use FitTrack to log your meals and track your nutrient intake.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your meals and ensure you're getting a balanced diet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nutritionModal2" tabindex="-1" aria-labelledby="nutritionModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-warning); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="nutritionModal2Label"><i class="bi bi-droplet-half me-2"></i>Hydration</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/nutrition-hydration.jpg" alt="Hydration" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Stay hydrated:</strong> Water is essential for energy, digestion, and performance.</p>
+                        <ul class="text-muted">
+                            <li>Carry a water bottle and sip throughout the day.</li>
+                            <li>Limit sugary drinks and sodas.</li>
+                            <li>Use FitTrack to log your water intake and stay accountable.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to monitor your hydration levels and ensure you're drinking enough water daily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nutritionModal3" tabindex="-1" aria-labelledby="nutritionModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-warning); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="nutritionModal3Label"><i class="bi bi-calendar-check me-2"></i>Meal Prep</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/nutrition-mealprep.jpg" alt="Meal Prep" class="img-fluid rounded mb-3" style="object-fit:cover; height:380px;">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Plan ahead:</strong> Prepping meals saves time and helps you make healthier choices.</p>
+                        <ul class="text-muted">
+                            <li>Batch cook proteins and grains for the week.</li>
+                            <li>Use containers to portion meals and snacks.</li>
+                            <li>Incorporate a variety of foods to keep meals interesting.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to log your meal prep and ensure you're eating balanced meals throughout the week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nutritionModal4" tabindex="-1" aria-labelledby="nutritionModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-warning); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="nutritionModal4Label"><i class="bi bi-emoji-heart-eyes me-2"></i>Mindful Eating</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/nutrition-mindful.jpg" alt="Mindful Eating" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Be present:</strong> Eat slowly, enjoy your food, and avoid distractions like screens.</p>
+                        <ul class="text-muted">
+                            <li>Pause between bites and check your hunger/fullness.</li>
+                            <li>Practice gratitude for your meals.</li>
+                            <li>Listen to your body’s signals to avoid overeating.</li>
+                        </ul>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Track Your Progress:</strong> Use FitTrack to log your meals and reflect on your eating habits, helping you develop a healthier relationship with food.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section id="article-mental" class="py-5" style="background: var(--bs-light); display:none;">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <i class="bi bi-emoji-smile fs-1 text-success mb-2"></i>
+                    <h2 class="fw-bold" style="color: var(--bs-success);">Mental Health</h2>
+                    <p class="lead text-muted mb-0" style="max-width: 600px; margin: 0 auto;">
+                        Prioritize your mental health with these practical tips for a balanced mind and body.
+                    </p>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/mental-motivated.jpg" alt="Stay Motivated" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-success);"><i class="bi bi-emoji-smile me-2"></i>Stay Motivated</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Set realistic goals and celebrate small wins to stay motivated.</li>
+                                    <li>Use FitTrack to track your progress and keep yourself accountable.</li>
+                                </ul>
+                                <button class="btn btn-outline-success btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#mentalHealthModal1">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/mental-mindfulness.jpg" alt="Mindfulness" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-success);"><i class="bi bi-brightness-high me-2"></i>Mindfulness</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Practice mindfulness techniques like meditation or deep breathing to reduce stress.</li>
+                                    <li>Take breaks to clear your mind and refocus during workouts.</li>
+                                </ul>
+                                <button class="btn btn-outline-success btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#mentalHealthModal2">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/mental-support.jpg" alt="Seek Support" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-success);"><i class="bi bi-people-fill me-2"></i>Seek Support</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Connect with friends, family, or a fitness community for support and encouragement.</li>
+                                    <li>Share your goals and progress to stay motivated.</li>
+                                </ul>
+                                <button class="btn btn-outline-success btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#mentalHealthModal3">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/mental-selfcare.jpeg" alt="Self-Care" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-success);"><i class="bi bi-heart-fill me-2"></i>Self-Care</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Prioritize self-care activities that bring you joy and relaxation.</li>
+                                    <li>Incorporate hobbies, reading, or nature walks into your routine.</li>
+                                </ul>
+                                <button class="btn btn-outline-success btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#mentalHealthModal4">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-success rounded-4 shadow-sm text-center mb-0">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Tip:</strong> Stay consistent with your nutrition and fitness goals for long-term success!
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="javascript:void(0)" class="btn btn-outline-info rounded-pill" onclick="showSection('article-fitness')">
+                        <i class="bi bi-lightning-charge-fill me-1"></i>Fitness Tips
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-warning rounded-pill" onclick="showSection('article-nutrition')">
+                        <i class="bi bi-egg-fried me-1"></i>Nutrition Advice
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-primary rounded-pill" onclick="showSection('article-motivation')">
+                        <i class="bi bi-journal-richtext me-1"></i>Motivation & More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Health Article Modals -->
+        <div class="modal fade" id="mentalHealthModal1" tabindex="-1" aria-labelledby="mentalHealthModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-success); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="mentalHealthModal1Label"><i class="bi bi-emoji-smile me-2"></i>Stay Motivated</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/mental-motivated.jpg" alt="Stay Motivated" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Set Realistic Goals:</strong> Break your fitness journey into achievable milestones to maintain motivation.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Celebrate Small Wins:</strong> Acknowledge your progress, no matter how small, to keep your spirits high.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to log your workouts and track your achievements.</li>
+                            <li>Join challenges or groups for added motivation and accountability.</li>
+                            <li>Visualize your goals and remind yourself why you started.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Explore motivational podcasts, books, or videos to keep your mindset positive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mentalHealthModal2" tabindex="-1" aria-labelledby="mentalHealthModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-success); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="mentalHealthModal2Label"><i class="bi bi-brightness-high me-2"></i>Mindfulness</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/mental-mindfulness.jpg" alt="Mindfulness" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Practice Mindfulness:</strong> Incorporate meditation, deep breathing, or yoga into your routine to reduce stress and improve focus.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Take Breaks:</strong> Step away from your workout to clear your mind and refocus when needed.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to schedule mindfulness sessions and track your mental health progress.</li>
+                            <li>Engage in activities that promote relaxation, like reading or listening to music.</li>
+                            <li>Practice gratitude daily to enhance your overall well-being.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Explore apps and websites that offer guided meditations and mindfulness exercises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mentalHealthModal3" tabindex="-1" aria-labelledby="mentalHealthModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-success); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="mentalHealthModal3Label"><i class="bi bi-people-fill me-2"></i>Seek Support</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/mental-support.jpg" alt="Seek Support" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Connect with Others:</strong> Share your fitness journey with friends, family, or a supportive community to stay motivated.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Join Groups:</strong> Participate in fitness classes or online forums to find encouragement and accountability.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to connect with friends and share your progress.</li>
+                            <li>Consider finding a workout buddy to keep each other accountable.</li>
+                            <li>Seek professional help if you're feeling overwhelmed or struggling with mental health issues.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Look for local support groups or online communities focused on fitness and mental health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mentalHealthModal4" tabindex="-1" aria-labelledby="mentalHealthModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-success); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="mentalHealthModal4Label"><i class="bi bi-heart-fill me-2"></i>Self-Care</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <img src="assets/images/mental-selfcare.jpeg" alt="Self-Care" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Prioritize Self-Care:</strong> Engage in activities that bring you joy and relaxation to recharge your mind and body.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Incorporate Hobbies:</strong> Spend time on hobbies, reading, or nature walks to enhance your mental well-being.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to schedule self-care activities and ensure you make time for yourself.</li>
+                            <li>Practice self-compassion and be kind to yourself during challenging times.</li>
+                            <li>Reflect on your achievements and remind yourself of your progress regularly.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Explore self-care apps or websites that offer tips and activities to enhance your mental health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="article-motivation" class="py-5" style="background: var(--bs-light); display:none;">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <i class="bi bi-journal-richtext fs-1 text-primary mb-2"></i>
+                    <h2 class="fw-bold" style="color: var(--bs-primary);">Motivation & More</h2>
+                    <p class="lead text-muted mb-0" style="max-width: 600px; margin: 0 auto;">
+                        Stay inspired and motivated with these tips and resources to keep you on track.
+                    </p>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/motivation-goals.png" alt="Set Goals" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-bullseye me-2"></i>Set Goals</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Define clear, achievable fitness and wellness goals.</li>
+                                    <li>Break them down into smaller milestones to track progress.</li>
+                                </ul>
+                                <button class="btn btn-outline-primary btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#motivationModal1">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/motivation-inspiration.avif" alt="Find Inspiration" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-lightbulb-fill me-2"></i>Find Inspiration</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Follow fitness influencers, read success stories, or watch motivational videos.</li>
+                                    <li>Join online communities for support and encouragement.</li>
+                                </ul>
+                                <button class="btn btn-outline-primary btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#motivationModal2">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/motivation-routine.jpg" alt="Create a Routine" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-calendar-check me-2"></i>Create a Routine</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Establish a consistent workout schedule that fits your lifestyle.</li>
+                                    <li>Incorporate variety to keep your routine fresh and exciting.</li>
+                                </ul>
+                                <button class="btn btn-outline-primary btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#motivationModal3">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 article-card-hover">
+                            <img src="assets/images/motivation-rewards.jpg" alt="Reward Yourself" class="card-img-top rounded-top-4" style="object-fit:cover; height:180px;">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2" style="color: var(--bs-primary);"><i class="bi bi-gift-fill me-2"></i>Reward Yourself</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>Celebrate your achievements with small rewards to stay motivated.</li>
+                                    <li>Choose non-food rewards like new workout gear or a spa day.</li>
+                                </ul>
+                                <button class="btn btn-outline-primary btn-sm rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#motivationModal4">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-primary rounded-4 shadow-sm text-center mb-0">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Tip:</strong> Consistency is key! Stick to your routine and track your progress with FitTrack.
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="javascript:void(0)" class="btn btn-outline-info rounded-pill" onclick="showSection('article-fitness')">
+                        <i class="bi bi-lightning-charge-fill me-1"></i>Fitness Tips
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-warning rounded-pill" onclick="showSection('article-nutrition')">
+                        <i class="bi bi-egg-fried me-1"></i>Nutrition Advice
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-success rounded-pill" onclick="showSection('article-mental')">
+                        <i class="bi bi-emoji-smile-fill me-1"></i>Mental Health
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Motivation Article Modals -->
+        <div class="modal fade" id="motivationModal1" tabindex="-1" aria-labelledby="motivationModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-primary); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="motivationModal1Label"><i class="bi bi-bullseye me-2"></i>Set Goals</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/motivation-goals.png" alt="Set Goals" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Define Clear Goals:</strong> Set specific, measurable, achievable, relevant, and time-bound (SMART) goals to guide your fitness journey.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Break Down Goals:</strong> Divide larger goals into smaller milestones to track your progress effectively.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to log your goals and monitor your achievements.</li>
+                            <li>Adjust your goals as needed based on your progress and experiences.</li>
+                            <li>Stay flexible and open to change as you learn more about your body and preferences.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Explore goal-setting apps or websites that offer templates and tips for effective goal planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="motivationModal2" tabindex="-1" aria-labelledby="motivationModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-primary); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="motivationModal2Label"><i class="bi bi-lightbulb-fill me-2"></i>Find Inspiration</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/motivation-inspiration.avif" alt="Find Inspiration" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Follow Fitness Influencers:</strong> Connect with fitness influencers on social media for daily inspiration and tips.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Read Success Stories:</strong> Explore success stories from others who have achieved their fitness goals to motivate yourself.</p>
+                        <ul class="text-muted">
+                            <li>Join online communities or forums to share experiences and find support.</li>
+                            <li>Watch motivational videos or documentaries that resonate with your fitness journey.</li>
+                            <li>Use FitTrack to share your own journey and inspire others in the community.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Look for motivational podcasts or YouTube channels that focus on fitness and personal growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="motivationModal3" tabindex="-1" aria-labelledby="motivationModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-primary); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="motivationModal3Label"><i class="bi bi-calendar-check me-2"></i>Create a Routine</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/motivation-routine.jpg" alt="Create a Routine" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Establish a Consistent Schedule:</strong> Create a workout routine that fits your lifestyle and stick to it for best results.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Incorporate Variety:</strong> Mix different types of workouts to keep your routine fresh and prevent boredom.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to schedule your workouts and set reminders to stay on track.</li>
+                            <li>Experiment with different activities like strength training, cardio, yoga, or group classes.</li>
+                            <li>Adjust your routine as needed based on your progress and preferences.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Explore fitness apps or websites that offer customizable workout plans and routines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="motivationModal4" tabindex="-1" aria-labelledby="motivationModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header" style="background: var(--bs-primary); border-top-left-radius:1rem; border-top-right-radius:1rem;">
+                        <h5 class="modal-title text-white" id="motivationModal4Label"><i class="bi bi-gift-fill me-2"></i>Reward Yourself</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/motivation-rewards.jpg" alt="Reward Yourself" class="img-fluid rounded mb-3">
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Celebrate Achievements:</strong> Acknowledge your progress and reward yourself for reaching milestones to stay motivated.</p>
+                        <p class="mb-2" style="color: var(--bs-dark);"><strong>Choose Non-Food Rewards:</strong> Opt for rewards that enhance your fitness journey, like new workout gear or a spa day.</p>
+                        <ul class="text-muted">
+                            <li>Use FitTrack to log your achievements and set reminders for when to reward yourself.</li>
+                            <li>Share your rewards with friends or on social media to inspire others.</li>
+                            <li>Reflect on your journey and how far you've come to keep your motivation high.</li>
+                        </ul>
+                        <p class="mt-3" style="color: var(--bs-dark);"><strong>Additional Resources:</strong> Look for articles or videos that discuss the psychology of rewards and motivation in fitness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Article Card Hover Effect -->
+                <style>
+                    .article-card-hover {
+                        transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+                        cursor: pointer;
+                    }
+                    .article-card-hover:hover, .article-card-hover:focus-within {
+                        transform: translateY(-6px) scale(1.025);
+                        box-shadow: 0 8px 32px 0 rgba(77,166,255,0.18), 0 1.5px 8px 0 rgba(44,62,80,0.08);
+                        z-index: 2;
+                    }
+                    #fitnessModal1 .modal-body,
+                    #fitnessModal2 .modal-body,
+                    #fitnessModal3 .modal-body,
+                    #fitnessModal4 .modal-body,
+                    #nutritionModal1 .modal-body,
+                    #nutritionModal2 .modal-body,
+                    #nutritionModal3 .modal-body,
+                    #nutritionModal4 .modal-body,
+                    #mentalHealthModal1 .modal-body,
+                    #mentalHealthModal2 .modal-body,
+                    #mentalHealthModal3 .modal-body,
+                    #mentalHealthModal4 .modal-body,
+                    #motivationModal1 .modal-body,
+                    #motivationModal2 .modal-body,
+                    #motivationModal3 .modal-body,
+                    #motivationModal4 .modal-body {
+                        max-height: 450px;
+                        overflow-y: auto;
+                        /* Optional: for a more modern look */
+                        scrollbar-width: thin;
+                        scrollbar-color: var(--bs-info) #e9ecef;
+                    }
+                    /* For Webkit browsers */
+                    #fitnessModal1 .modal-body::-webkit-scrollbar,
+                    #fitnessModal2 .modal-body::-webkit-scrollbar,
+                    #fitnessModal3 .modal-body::-webkit-scrollbar,
+                    #fitnessModal4 .modal-body::-webkit-scrollbar,
+                    #nutritionModal1 .modal-body::-webkit-scrollbar,
+                    #nutritionModal2 .modal-body::-webkit-scrollbar,
+                    #nutritionModal3 .modal-body::-webkit-scrollbar,
+                    #nutritionModal4 .modal-body::-webkit-scrollbar,
+                    #mentalHealthModal1 .modal-body::-webkit-scrollbar,
+                    #mentalHealthModal2 .modal-body::-webkit-scrollbar,
+                    #mentalHealthModal3 .modal-body::-webkit-scrollbar,
+                    #mentalHealthModal4 .modal-body::-webkit-scrollbar,
+                    #motivationModal1 .modal-body::-webkit-scrollbar,
+                    #motivationModal2 .modal-body::-webkit-scrollbar,
+                    #motivationModal3 .modal-body::-webkit-scrollbar,
+                    #motivationModal4 .modal-body::-webkit-scrollbar {
+                        width: 8px;
+                        background: #e9ecef;
+                    }
+                    #fitnessModal1 .modal-body::-webkit-scrollbar-thumb,
+                    #fitnessModal2 .modal-body::-webkit-scrollbar-thumb,
+                    #fitnessModal3 .modal-body::-webkit-scrollbar-thumb,
+                    #fitnessModal4 .modal-body::-webkit-scrollbar-thumb,
+                    #nutritionModal1 .modal-body::-webkit-scrollbar-thumb,
+                    #nutritionModal2 .modal-body::-webkit-scrollbar-thumb,
+                    #nutritionModal3 .modal-body::-webkit-scrollbar-thumb,
+                    #nutritionModal4 .modal-body::-webkit-scrollbar-thumb,
+                    #mentalHealthModal1 .modal-body::-webkit-scrollbar-thumb,
+                    #mentalHealthModal2 .modal-body::-webkit-scrollbar-thumb,
+                    #mentalHealthModal3 .modal-body::-webkit-scrollbar-thumb,
+                    #mentalHealthModal4 .modal-body::-webkit-scrollbar-thumb,
+                    #motivationModal1 .modal-body::-webkit-scrollbar-thumb,
+                    #motivationModal2 .modal-body::-webkit-scrollbar-thumb,
+                    #motivationModal3 .modal-body::-webkit-scrollbar-thumb,
+                    #motivationModal4 .modal-body::-webkit-scrollbar-thumb {
+                        background: var(--bs-info);
+                        border-radius: 4px;
+                    }
+                </style>
+
+        <!-- Features Section -->
+        <section id="features" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--bs-light);">
+                        <i class="bi bi-stars me-2"></i>Features
+                    </h2>
+                    <p class="lead" style="color: var(--bs-dark);">
+                        Discover all the powerful tools FitTrack offers to help you achieve your health and fitness goals.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-bar-chart-line-fill fs-1 text-info mb-3"></i>
+                                <h5 class="card-title fw-bold">Progress Tracking</h5>
+                                <p class="card-text text-muted">Monitor your fitness journey and visualize your improvements with interactive charts and stats.</p>
+                                <span class="badge bg-info-subtle text-info mb-2">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-bullseye fs-1 text-warning mb-3"></i>
+                                <h5 class="card-title fw-bold">Goal Setting</h5>
+                                <p class="card-text text-muted">Set personalized fitness, nutrition, and wellness goals. Get reminders and celebrate milestones.</p>
+                                <span class="badge bg-warning-subtle text-warning mb-2">Personalized</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-alarm-fill fs-1 text-success mb-3"></i>
+                                <h5 class="card-title fw-bold">Daily Reminders</h5>
+                                <p class="card-text text-muted">Stay on track with customizable reminders for workouts, meals, hydration, and more.</p>
+                                <span class="badge bg-success-subtle text-success mb-2">Motivation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-journal-check fs-1 text-danger mb-3"></i>
+                                <h5 class="card-title fw-bold">Calorie & Workout Logging</h5>
+                                <p class="card-text text-muted">Easily log your meals, workouts, and activities for better tracking and results.</p>
+                                <span class="badge bg-danger-subtle text-danger mb-2">Logging</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-graph-up-arrow fs-1 text-primary mb-3"></i>
+                                <h5 class="card-title fw-bold">Advanced Analytics</h5>
+                                <p class="card-text text-muted">Get actionable insights with trend analysis, weekly summaries, and progress forecasts.</p>
+                                <span class="badge bg-primary-subtle text-primary mb-2">Insights</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-emoji-smile-fill fs-1 text-success mb-3"></i>
+                                <h5 class="card-title fw-bold">Mood & Wellness Tracking</h5>
+                                <p class="card-text text-muted">Log your mood, sleep, and energy levels to understand your overall wellness.</p>
+                                <span class="badge bg-success-subtle text-success mb-2">Wellbeing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-people-fill fs-1 text-info mb-3"></i>
+                                <h5 class="card-title fw-bold">Community Challenges</h5>
+                                <p class="card-text text-muted">Join group challenges, compete on leaderboards, and celebrate wins together.</p>
+                                <span class="badge bg-info-subtle text-info mb-2">Social</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="feature-card card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-shield-lock-fill fs-1 text-dark mb-3"></i>
+                                <h5 class="card-title fw-bold">Privacy & Security</h5>
+                                <p class="card-text text-muted">Your data is encrypted and protected. You control your privacy settings at all times.</p>
+                                <span class="badge bg-dark-subtle text-dark mb-2">Secure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Enhanced Feature Card Styles */
+                .feature-card {
+                    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+                    border-radius: 1.25rem;
+                    background: #fff;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .feature-card .card-body {
+                    padding: 2rem 1.2rem 1.5rem 1.2rem;
+                }
+                .feature-card:hover, .feature-card:focus-within {
+                    transform: translateY(-8px) scale(1.03);
+                    box-shadow: 0 8px 32px 0 rgba(77,166,255,0.18), 0 1.5px 8px 0 rgba(44,62,80,0.08);
+                    z-index: 2;
+                }
+                .feature-card .badge {
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    border-radius: 1rem;
+                    padding: 0.35em 1em;
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    opacity: 0.92;
+                }
+                .feature-card .card-title {
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.7rem;
+                }
+                .feature-card .card-text {
+                    min-height: 60px;
+                }
+                @media (max-width: 991px) {
+                    .feature-card .card-body {
+                        padding: 1.5rem 0.8rem 1
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #e3f2fd 100%);">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--bs-primary);">
+                        <i class="bi bi-people-fill me-2"></i>Community
+                    </h2>
+                    <p class="lead" style="color: var(--bs-dark);">
+                        Connect, share, and grow with fellow fitness enthusiasts. Join challenges, celebrate milestones, and get inspired!
+                    </p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-3">
+                        <div class="text-center">
+                            <span class="fw-bold fs-4" style="color:var(--bs-primary);">10,000+</span>
+                            <div class="small text-muted">Active Members</div>
+                        </div>
+                        <div class="text-center">
+                            <span class="fw-bold fs-4" style="color:var(--bs-success);">1M+</span>
+                            <div class="small text-muted">Posts Shared</div>
+                        </div>
+                        <div class="text-center">
+                            <span class="fw-bold fs-4" style="color:var(--bs-warning);">500+</span>
+                            <div class="small text-muted">Challenges Completed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="community-card card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-chat-dots-fill fs-1 text-info mb-3"></i>
+                                <h5 class="fw-bold">Discussion Forums</h5>
+                                <p class="text-muted">Ask questions, share tips, and get advice from the FitTrack community.</p>
+                                <span class="badge bg-info-subtle text-info mb-2">Forums</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="community-card card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-trophy-fill fs-1 text-warning mb-3"></i>
+                                <h5 class="fw-bold">Challenges & Leaderboards</h5>
+                                <p class="text-muted">Participate in fun challenges and see how you rank among your peers.</p>
+                                <span class="badge bg-warning-subtle text-warning mb-2">Compete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="community-card card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
+                                <h5 class="fw-bold">Support & Motivation</h5>
+                                <p class="text-muted">Find workout buddies, share your journey, and motivate each other to reach your goals.</p>
+                                <span class="badge bg-danger-subtle text-danger mb-2">Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 align-items-center">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                            <img src="assets/images/user1.png" alt="User 1" class="rounded-circle border border-2" style="width:48px; height:48px; object-fit:cover;">
+                            <img src="assets/images/user2.png" alt="User 2" class="rounded-circle border border-2" style="width:48px; height:48px; object-fit:cover;">
+                            <img src="assets/images/user1.png" alt="User 3" class="rounded-circle border border-2" style="width:48px; height:48px; object-fit:cover;">
+                            <span class="fw-semibold text-muted ms-2">...and thousands more!</span>
+                        </div>
+                        <blockquote class="blockquote text-center mt-3">
+                            <p class="mb-2 fst-italic text-dark">“The FitTrack community keeps me motivated every day!”</p>
+                            <footer class="blockquote-footer text-muted mt-2">Jamie L., <cite title="Source Title">Community Member</cite></footer>
+                        </blockquote>
+                        <div class="text-center mt-4">
+                            <a href="#" class="btn btn-info btn-lg rounded-pill text-white shadow">Join the Community</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .community-card {
+                    transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s;
+                    border-radius: 1.25rem;
+                    background: #fff;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .community-card .card-body {
+                    padding: 2rem 1.2rem 1.5rem 1.2rem;
+                }
+                .community-card:hover, .community-card:focus-within {
+                    transform: translateY(-8px) scale(1.04);
+                    box-shadow: 0 8px 32px 0 rgba(77,166,255,0.18), 0 1.5px 8px 0 rgba(44,62,80,0.08);
+                    z-index: 2;
+                }
+                .community-card .badge {
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    border-radius: 1rem;
+                    padding: 0.35em 1em;
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    opacity: 0.92;
+                }
+            </style>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--bs-light);">
+                        <i class="bi bi-play-circle-fill me-2"></i>Videos
+                    </h2>
+                    <p class="lead" style="color: var(--bs-dark);">
+                        Access a curated library of workout, nutrition, and wellness videos to guide your fitness journey. Learn from experts and stay motivated!
+                    </p>
+                    <div class="d-inline-flex gap-4 mt-3" id="videoFilters">
+                        <button class="btn btn-outline-primary btn-md rounded-pill active" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary btn-md rounded-pill" data-filter="workouts">Workouts</button>
+                        <button class="btn btn-outline-primary btn-md rounded-pill" data-filter="nutrition">Nutrition</button>
+                        <button class="btn btn-outline-primary btn-md rounded-pill" data-filter="wellness">Wellness</button>
+                    </div>
+                </div>
+                <div class="row g-4" id="videoCards">
+                    <!-- Workout Videos -->
+                    <div class="col-md-4 video-card-item" data-category="workouts">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/push-up-poster.jpg" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/How to Do_PUSH-UPS(720P_HD).mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/How to Do_PUSH-UPS(720P_HD).mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-info mt-2">Beginner</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user1.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Coach Sam</span>
+                                </div>
+                                <h5 class="fw-bold">How to Do Push-Ups</h5>
+                                <p class="text-muted small mb-2">Push ups are a great way to build upper body strength.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>4:12</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>2.1k views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 video-card-item" data-category="workouts">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/squats-thumbs.jpg" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/How to Do_SQUATS(720P_HD).mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/How to Do_SQUATS(720P_HD).mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-warning mt-2">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user2.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Coach Mia</span>
+                                </div>
+                                <h5 class="fw-bold">How to Do Squats</h5>
+                                <p class="text-muted small mb-2">Squats are essential for building lower body strength and stability.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>5:03</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>1.7k views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nutrition Videos -->
+                    <div class="col-md-4 video-card-item" data-category="nutrition">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/nutrition-thumbs.jpg" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/Nutrition_Tips.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/Nutrition_Tips.mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-success mt-2">Nutrition</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user1.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Dietitian Lee</span>
+                                </div>
+                                <h5 class="fw-bold">Top 5 Nutrition Tips</h5>
+                                <p class="text-muted small mb-2">Simple nutrition strategies to boost your energy and results.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>3:45</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>1.2k views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 video-card-item" data-category="nutrition">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/healthy-eating.webp" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/Healthy_Eating.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/Healthy_Eating.mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-success mt-2">Nutrition</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user2.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Coach Ana</span>
+                                </div>
+                                <h5 class="fw-bold">Healthy Eating Habits</h5>
+                                <p class="text-muted small mb-2">Learn how to build sustainable, healthy eating habits for life.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>6:10</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>900 views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Wellness Videos -->
+                    <div class="col-md-4 video-card-item" data-category="wellness">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/meditation-thumb.jpg" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/Meditation_Guide.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/Meditation_Guide.mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-primary mt-2">Wellness</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user1.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Coach Zen</span>
+                                </div>
+                                <h5 class="fw-bold">Guided Meditation</h5>
+                                <p class="text-muted small mb-2">Relax and recharge with this beginner-friendly meditation session.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>8:00</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>1.5k views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 video-card-item" data-category="wellness">
+                        <div class="video-card card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <div class="video-thumb position-relative">
+                                <video muted class="card-img-top rounded-top" poster="assets/images/stretching-thumb.jpg" style="width: 100%; height: 280px; object-fit: cover;">
+                                    <source src="assets/images/Stretching_Routine.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay d-flex flex-column justify-content-center align-items-center"
+                                    style="cursor:pointer"
+                                    data-video="assets/images/Stretching_Routine.mp4">
+                                    <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                    <span class="badge bg-primary mt-2">Wellness</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/user1.png" alt="Instructor" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                    <span class="fw-semibold text-muted small">Coach Flex</span>
+                                </div>
+                                <h5 class="fw-bold">Full Body Stretching</h5>
+                                <p class="text-muted small mb-2">Improve flexibility and prevent injury with this stretching routine.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="bi bi-clock me-1"></i>7:20</span>
+                                    <span class="text-muted small"><i class="bi bi-eye me-1"></i>1.1k views</span>
+                                </div>
+                                <a href="#" class="btn btn-info btn-sm rounded-pill text-white mt-3"><i class="bi bi-play-fill me-1"></i>Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-outline-primary btn-lg rounded-pill px-5">See All Videos</a>
+                </div>
+            </div>
+            <style>
+                .video-card {
+                    transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s;
+                    border-radius: 1.25rem;
+                    background: #fff;
+                    overflow: hidden;
+                    position: relative;
+                }
+                .video-card .video-thumb {
+                    position: relative;
+                    overflow: hidden;
+                }
+                .video-card .video-thumb video {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: cover;
+                    border-top-left-radius: 1.25rem;
+                    border-top-right-radius: 1.25rem;
+                    transition: transform 0.3s;
+                }
+                .video-card:hover .video-thumb video,
+                .video-card:focus-within .video-thumb video {
+                    transform: scale(1.05);
+                    filter: brightness(0.85);
+                }
+                .video-card .video-overlay {
+                    position: absolute;
+                    top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(44,62,80,0.25);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+                .video-card:hover .video-overlay,
+                .video-card:focus-within .video-overlay {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                .video-card .badge {
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    border-radius: 1rem;
+                    padding: 0.35em 1em;
+                    opacity: 0.92;
+                }
+                .video-card .card-body {
+                    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+                }
+            </style>
+        </section>
+
+        <!-- Nutrition Section -->
+        <section id="nutrition" class="py-5" style="background: var(--bs-light);">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--bs-primary);">
+                        <i class="bi bi-egg-fried me-2"></i>Nutrition & Meal Planning
+                    </h2>
+                    <p class="lead" style="color: var(--bs-dark); max-width: 700px; margin: 0 auto;">
+                        Fuel your body for success! FitTrack’s nutrition tools help you log meals, discover healthy recipes, and get personalized insights to optimize your diet and performance.
+                    </p>
+                </div>
+                <div class="row g-4 align-items-stretch">
+                    <!-- Meal Logging -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <i class="bi bi-journal-medical fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold mb-2">Meal Logging</h5>
+                                <p class="text-muted mb-3">Easily log your daily meals and snacks. Track calories, macros, and nutrients with our intuitive food diary.</p>
+                                <ul class="list-unstyled text-muted small mb-0">
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Barcode scanning</li>
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Custom foods & recipes</li>
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Macro breakdown</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Healthy Recipes -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <i class="bi bi-cup-straw fs-1 text-warning mb-3"></i>
+                                <h5 class="fw-bold mb-2">Healthy Recipes</h5>
+                                <p class="text-muted mb-3">Explore a variety of delicious, nutritious recipes tailored to your goals and dietary needs.</p>
+                                <ul class="list-unstyled text-muted small mb-0">
+                                    <li><i class="bi bi-check-circle text-warning me-1"></i>Vegetarian & vegan options</li>
+                                    <li><i class="bi bi-check-circle text-warning me-1"></i>Meal prep guides</li>
+                                    <li><i class="bi bi-check-circle text-warning me-1"></i>Quick & easy meals</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nutrition Insights -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <i class="bi bi-graph-up-arrow fs-1 text-success mb-3"></i>
+                                <h5 class="fw-bold mb-2">Nutrition Insights</h5>
+                                <p class="text-muted mb-3">Get personalized feedback and actionable tips to improve your eating habits and reach your goals.</p>
+                                <ul class="list-unstyled text-muted small mb-0">
+                                    <li><i class="bi bi-check-circle text-success me-1"></i>Macro & micronutrient analysis</li>
+                                    <li><i class="bi bi-check-circle text-success me-1"></i>Daily & weekly reports</li>
+                                    <li><i class="bi bi-check-circle text-success me-1"></i>Goal-based suggestions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Meal Planner -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <i class="bi bi-calendar-check fs-1 text-info mb-3"></i>
+                                <h5 class="fw-bold mb-2">Smart Meal Planner</h5>
+                                <p class="text-muted mb-3">Plan your week with ease! Generate meal plans based on your dietary preferences and fitness goals.</p>
+                                <ul class="list-unstyled text-muted small mb-0">
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Personalized meal plans</li>
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Shopping list generator</li>
+                                    <li><i class="bi bi-check-circle text-info me-1"></i>Sync with workout schedule</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nutrition Tips & Callout -->
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="alert alert-info rounded-4 shadow-sm text-center mb-0">
+                            <i class="bi bi-lightbulb-fill me-2"></i>
+                            <strong>Tip:</strong> Consistency is key! Use FitTrack’s nutrition tools daily to build healthy habits and see real results.
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="#" class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow" onclick="showSection('register', null)">
+                                <i class="bi bi-egg-fried me-2"></i>Start Your Nutrition Journey
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #e3f2fd 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-4">
+                                    <i class="bi bi-shield-lock-fill display-4 text-info mb-3"></i>
+                                    <h2 class="fw-bold" style="color: var(--bs-primary);">Privacy Policy</h2>
+                                </div>
+                                <p class="text-muted fs-6 mb-4">
+                                    FitTrack values your privacy. We collect only essential information to provide our services, such as your name, email, and fitness data. Your data is securely stored and never sold to third parties. You can request data deletion at any time.
+                                </p>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-cookie me-2 text-info"></i>We use cookies to enhance your experience.</li>
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-lock-fill me-2 text-info"></i>Your data is encrypted and protected.</li>
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-person-check-fill me-2 text-info"></i>You control your information and can update or delete your account anytime.</li>
+                                </ul>
+                                <div class="alert alert-info rounded-3 text-center mb-0">
+                                    For full details, please review our complete privacy policy or <a href="#" class="text-decoration-underline text-primary" onclick="showSection('contact', null)">contact us</a> for questions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Terms of Service Section -->
+        <section id="terms-of-service" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #fffbe7 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-4">
+                                    <i class="bi bi-file-earmark-text-fill display-4 text-warning mb-3"></i>
+                                    <h2 class="fw-bold" style="color: var(--bs-primary);">Terms of Service</h2>
+                                </div>
+                                <p class="text-muted fs-6 mb-4">
+                                    By using FitTrack, you agree to our terms: use the platform responsibly, do not share your account, and respect other users. All content is for informational purposes and not a substitute for professional medical advice.
+                                </p>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-person-fill-check me-2 text-warning"></i>Users must be 13 years or older.</li>
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-shield-exclamation me-2 text-warning"></i>Do not misuse or attempt to hack the service.</li>
+                                    <li class="list-group-item bg-transparent text-muted"><i class="bi bi-c-circle me-2 text-warning"></i>Respect copyright and intellectual property.</li>
+                                </ul>
+                                <div class="alert alert-warning rounded-3 text-center mb-0">
+                                    We reserve the right to update these terms and suspend accounts for violations.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-4" style="background: linear-gradient(135deg, var(--bs-light) 80%, #e0f7fa 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                            <div class="row g-0">
+                                <!-- Left: Form -->
+                                <div class="col-md-7 bg-white p-4 d-flex flex-column justify-content-center">
+                                    <div class="mb-3">
+                                        <h3 class="fw-bold mb-1" style="color: var(--bs-primary); font-size:1.6rem;">Get in <span style="color:#183046;">Touch</span></h3>
+                                        <p class="text-muted mb-0" style="font-size:0.9rem;">Have a question or need support? Fill out the form and our FitTrack team will get back to you soon.</p>
+                                    </div>
+                                    <form>
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control form-control-sm rounded-pill shadow-sm" placeholder="Name *" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <input type="email" class="form-control form-control-sm rounded-pill shadow-sm" placeholder="Email *" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <input type="tel" class="form-control form-control-sm rounded-pill shadow-sm" placeholder="Phone number">
+                                        </div>
+                                        <div class="mb-2">
+                                            <select class="form-select form-select-sm rounded-pill shadow-sm" required>
+                                                <option value="" disabled selected>How did you find us?</option>
+                                                <option>Google Search</option>
+                                                <option>Social Media</option>
+                                                <option>Friend/Referral</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-2">
+                                            <textarea class="form-control form-control-sm rounded-4 shadow-sm" rows="4" placeholder="Your Message *" required></textarea>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-md mt-2 contact-send-btn" style="background: var(--bs-primary); color: #fff; font-weight:600; border-radius:2rem; letter-spacing:1px;">
+                                                SEND
+                                            </button>
+                                        </div>
+                                        <style>
+                                            .contact-send-btn:hover,
+                                            .contact-send-btn:focus {
+                                                background: var(--bs-light) !important;
+                                                border-color: var(--bs-primary) !important;
+                                                color: var(--bs-dark) !important;
+                                                box-shadow: 0 0 0 0.2rem rgba(102,217,255,0.15);
+                                                transition: background 0.2s, box-shadow 0.2s;
+                                            }
+                                        </style>
+                                    </form>
+                                    <div class="row mt-4 g-2">
+                                        <div class="col-12 col-sm-4 d-flex align-items-center">
+                                            <i class="bi bi-telephone-fill me-2 text-info"></i>
+                                            <div>
+                                                <div class="small text-muted">PHONE</div>
+                                                <div class="fw-semibold" style="color:var(--bs-dark); font-size:0.7rem;">+1 555-123-4567</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4 d-flex align-items-center">
+                                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                                            <div>
+                                                <div class="small text-muted">EMAIL</div>
+                                                <div class="fw-semibold" style="color:var(--bs-dark); font-size:0.7rem;">support@fittrack.com</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4 d-flex align-items-center">
+                                            <i class="bi bi-geo-alt-fill me-2 text-info"></i>
+                                            <div>
+                                                <div class="small text-muted">ADDRESS</div>
+                                                <div class="fw-semibold" style="color:var(--bs-dark); font-size:0.7rem;">123 Wellness Ave, Makati</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right: Map -->
+                                <div class="col-md-5 d-none d-md-block" style="background:#183046;">
+                                    <div class="h-100 w-100 d-flex align-items-center justify-content-center" style="min-height:100%;">
+                                        <iframe
+                                            src="https://www.openstreetmap.org/export/embed.html?bbox=120.9842%2C14.5995%2C120.9842%2C14.5995&amp;layer=mapnik"
+                                            style="border:0; width:100%; height:100%; min-height:320px; border-radius:0 0.75rem 0.75rem 0;"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                            title="FitTrack Location"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Help Center Section -->
+        <section id="help-center" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #f3e5f5 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-5">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-question-circle-fill" style="font-size:2rem; color: var(--bs-primary);"></i>
+                                    <h3 class="fw-bold mb-1" style="color: var(--bs-primary); font-size:1.4rem;">Help Center</h3>
+                                    <p class="text-muted mb-0" style="font-size:0.98rem;">Find answers to common questions or reach out for support.</p>
+                                </div>
+                                <div class="accordion accordion-flush" id="helpAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq1">
+                                            <button class="accordion-button collapsed fw-bold py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" style="font-size:1rem;">
+                                                <i class="bi bi-key me-2 text-primary"></i>How do I reset my password?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body text-muted py-2" style="font-size:0.95rem;">
+                                                Go to the login page, click "Forgot Password", and follow the instructions sent to your email.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq2">
+                                            <button class="accordion-button collapsed fw-bold py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" style="font-size:1rem;">
+                                                <i class="bi bi-person-x-fill me-2 text-primary"></i>How do I delete my account?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body text-muted py-2" style="font-size:0.95rem;">
+                                                Visit your profile settings and select "Delete Account". Contact support if you need assistance.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq3">
+                                            <button class="accordion-button collapsed fw-bold py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" style="font-size:1rem;">
+                                                <i class="bi bi-clipboard-check me-2 text-primary"></i>How do I track my workouts?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body text-muted py-2" style="font-size:0.95rem;">
+                                                Use the workout logging feature in your dashboard to add exercises, sets, and reps.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq4">
+                                            <button class="accordion-button collapsed fw-bold py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" style="font-size:1rem;">
+                                                <i class="bi bi-person-fill me-2 text-primary"></i>How do I update my profile information?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body text-muted py-2" style="font-size:0.95rem;">
+                                                Go to your account settings and select "Edit Profile" to update your information.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="faq5">
+                                            <button class="accordion-button collapsed fw-bold py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" style="font-size:1rem;">
+                                                <i class="bi bi-question-circle me-2 text-primary"></i>Where can I find workout videos?
+                                            </button>
+                                        </h2>
+                                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body text-muted py-2" style="font-size:0.95rem;">
+                                                Visit the "Videos" section in the main menu to access our library of workout tutorials.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-muted small text-center">
+                                    Still need help? <a href="#" class="text-info text-decoration-underline" onclick="showSection('contact', null)">Contact our support team</a>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #e3f2fd 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                            <div class="row g-0 align-items-stretch">
+                                <!-- Left: Information -->
+                                <div class="col-md-6 bg-white p-5 d-flex flex-column justify-content-center">
+                                    <div class="mb-3 text-uppercase fw-bold small" style="color: var(--bs-primary); letter-spacing: 1px;">
+                                        How We Started
+                                    </div>
+                                    <h2 class="fw-bold mb-3" style="color: var(--bs-dark); font-size:2.2rem;">
+                                        Our Mission is<br>
+                                        <span style="color: var(--bs-primary);">Empowering Healthy Lifestyles</span>
+                                    </h2>
+                                    <p class="text-muted mb-4" style="font-size:1.05rem;">
+                                        FitTrack was founded to make fitness accessible, motivating, and data-driven for everyone. Our platform combines smart tracking, expert guidance, and a supportive community to help you achieve your health goals—no matter your starting point. We believe in holistic wellness, celebrating every milestone, and making healthy living a joyful journey.
+                                    </p>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i>Personalized fitness and nutrition tracking</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i>Science-backed resources and expert tips</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i>Inclusive, supportive global community</li>
+                                    </ul>
+                                </div>
+                                <!-- Right: Image & Stats -->
+                                <div class="col-md-6 bg-light d-flex flex-column justify-content-center align-items-center p-4">
+                                    <img src="assets/images/About-us-img.png" alt="About FitTrack" class="img-fluid rounded-4 shadow mb-4" style="max-width: 90%; max-height: 480px; object-fit: cover;">
+                                    <div class="row w-100 g-3">
+                                        <div class="col-6 col-lg-6">
+                                            <div class="bg-white rounded-4 shadow-sm text-center py-3 px-2 h-100">
+                                                <div class="fw-bold fs-4" style="color: var(--bs-primary);">5+</div>
+                                                <div class="small text-muted">Years Empowering Wellness</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-6">
+                                            <div class="bg-white rounded-4 shadow-sm text-center py-3 px-2 h-100">
+                                                <div class="fw-bold fs-4" style="color: var(--bs-primary);">30K+</div>
+                                                <div class="small text-muted">Active Members</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-6 mt-3">
+                                            <div class="bg-white rounded-4 shadow-sm text-center py-3 px-2 h-100">
+                                                <div class="fw-bold fs-4" style="color: var(--bs-primary);">100+</div>
+                                                <div class="small text-muted">Expert Articles</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-6 mt-3">
+                                            <div class="bg-white rounded-4 shadow-sm text-center py-3 px-2 h-100">
+                                                <div class="fw-bold fs-4" style="color: var(--bs-primary);">15</div>
+                                                <div class="small text-muted">Wellness Challenges</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forums Section -->
+        <section id="forums" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #f0f4c3 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-4">
+                                    <i class="bi bi-chat-dots-fill display-4 text-success mb-3"></i>
+                                    <h2 class="fw-bold" style="color: var(--bs-primary);">Community Forums</h2>
+                                </div>
+                                <p class="text-muted fs-6 mb-4">
+                                    The FitTrack Forums are where our members connect, share, and grow together. Whether you’re a beginner or a pro, you’ll find support, advice, and inspiration from people just like you.
+                                </p>
+                                <div class="row text-center mb-4">
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-lightbulb-fill fs-2 text-success"></i>
+                                        <div class="fw-bold mt-2">Tips & Advice</div>
+                                        <div class="small text-muted">Get answers from the community</div>
+                                    </div>
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-people-fill fs-2 text-success"></i>
+                                        <div class="fw-bold mt-2">Find Buddies</div>
+                                        <div class="small text-muted">Connect for accountability</div>
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <i class="bi bi-award-fill fs-2 text-success"></i>
+                                        <div class="fw-bold mt-2">Expert Q&As</div>
+                                        <div class="small text-muted">Join live sessions with pros</div>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><i class="bi bi-arrow-right-circle-fill text-success me-2"></i>Share your progress and get feedback</li>
+                                    <li><i class="bi bi-arrow-right-circle-fill text-success me-2"></i>Participate in themed discussions</li>
+                                    <li><i class="bi bi-arrow-right-circle-fill text-success me-2"></i>Celebrate milestones with others</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Challenges Section -->
+        <section id="challenges" class="py-5" style="background: var(--bs-light); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mt-4 mb-4">
+                                    <i class="bi bi-trophy-fill display-4 text-warning mb-3"></i>
+                                    <h2 class="fw-bold" style="color: var(--bs-primary);">Fitness Challenges</h2>
+                                </div>
+                                <p class="text-muted fs-6 mb-4">
+                                    Take part in our monthly and seasonal challenges to stay motivated and earn rewards. Compete with friends, climb the leaderboard, and unlock exclusive badges!
+                                </p>
+                                <div class="row text-center mb-4">
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-flag-fill fs-2 text-warning"></i>
+                                        <div class="fw-bold mt-2">Step & Workout</div>
+                                        <div class="small text-muted">Daily and weekly goals</div>
+                                    </div>
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-bar-chart-fill fs-2 text-warning"></i>
+                                        <div class="fw-bold mt-2">Live Leaderboards</div>
+                                        <div class="small text-muted">See your rank in real time</div>
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <i class="bi bi-gem fs-2 text-warning"></i>
+                                        <div class="fw-bold mt-2">Earn Badges</div>
+                                        <div class="small text-muted">Collect digital trophies</div>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i>Join step, workout, or nutrition challenges</li>
+                                    <li><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i>Track your progress and celebrate wins</li>
+                                    <li><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i>Motivate and compete with friends</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Support Section -->
+        <section id="support" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #e1bee7 100%); display: none;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mt-4 mb-4">
+                                    <i class="bi bi-life-preserver display-4 text-primary mb-3"></i>
+                                    <h2 class="fw-bold" style="color: var(--bs-primary);">Support</h2>
+                                </div>
+                                <p class="text-muted fs-6 mb-4">
+                                    Need help? Our dedicated support team and community are here for you. Browse FAQs, get technical assistance, or reach out directly for personalized help.
+                                </p>
+                                <div class="row text-center mb-4">
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-question-circle-fill fs-2 text-primary"></i>
+                                        <div class="fw-bold mt-2">FAQ & Help Center</div>
+                                        <div class="small text-muted">Find instant answers</div>
+                                    </div>
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <i class="bi bi-envelope-fill fs-2 text-primary"></i>
+                                        <div class="fw-bold mt-2">Email Support</div>
+                                        <div class="small text-muted">support@fittrack.com</div>
+                                    </div>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <i class="bi bi-chat-dots-fill fs-2 text-primary"></i>
+                                        <div class="fw-bold mt-2">Live Chat</div>
+                                        <div class="small text-muted">Community & staff chat</div>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li>
+                                        <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Visit our 
+                                        <a href="#" class="text-info text-decoration-underline" onclick="showSection('help-center', null)">Help Center</a>
+                                    </li>
+                                    <li>
+                                        <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>
+                                        Email: <a href="mailto:support@fittrack.com" class="text-info">support@fittrack.com</a>
+                                    </li>
+                                    <li>
+                                        <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>
+                                        Join the <a href="#" class="text-info text-decoration-underline" onclick="showSection('forums', null)">community forums</a> for peer support
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register Section -->
+        <section id="register" class="py-5" style="background: linear-gradient(135deg, var(--bs-light) 80%, #f3e5f5 100%); display: none;">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Text Content -->
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="fw-bold mb-3" style="color: var(--bs-secondary);">Join <span class="text-primary">FitTrack</span> Today</h2>
+                        <p class="lead text-muted mb-4">Start your journey toward better health, stronger habits, and a more balanced lifestyle. Track your progress, stay motivated, and connect with a supportive community.</p>
+                        <ul class="list-unstyled text-muted mb-4">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalized fitness and nutrition tracking</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Mental health tips and motivation boosters</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Access to challenges, forums, and resources</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-lg rounded-pill px-4">Get Started</a>
+                    </div>
+
+                    <!-- Visual or Illustration -->
+                    <div class="col-lg-5 text-center">
+                        <i class="bi bi-person-plus-fill" style="font-size: 20rem; color: var(--bs-primary);"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action (CTA) Section -->
+        <section class="py-5" style="background: var(--bs-primary);">
+            <div class="container">
+                <div class="row justify-content-center align-items-center text-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold text-white mb-3">
+                            Ready to take control of your fitness journey?
+                        </h2>
+                        <p class="lead text-white-50 mb-4">
+                            Join FitTrack today and start tracking your progress for free!
+                        </p>
+                        <a href="register.html" class="btn btn-light btn-lg px-5 rounded-pill fw-bold shadow">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Start Tracking Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--bs-dark); border-top: 2px solid var(--bs-primary);">
+        <div class="container py-5">
+            <div class="row align-items-start">
+                <!-- Logo & Brand -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <a href="#" class="d-flex align-items-center mb-3 text-decoration-none">
+                        <img src="assets/icons/Logo.png" alt="FitTrack Logo" width="40" class="me-2">
+                        <span class="fw-bold fs-4" style="color: var(--bs-primary);">FitTrack</span>
+                    </a>
+                </div>
+                <!-- Community -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: var(--bs-primary);">Community</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('about', null)">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('forums', null)">Forums</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('challenges', null)">Challenges</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block" style="color: var(--bs-light);" onclick="showSection('support', null)">Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Getting Started -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: var(--bs-primary);">Getting Started</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('features', null)">Features</a></li>
+                        <li><a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('videos', null)">Videos</a></li>
+                        <li><a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('nutrition', null)">Nutrition</a></li>
+                        <li><a href="#" class="text-decoration-none d-block" style="color: var(--bs-light);" onclick="showSection('register', null)">Register</a></li>
+                    </ul>
+                </div>
+                <!-- Resources -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: var(--bs-primary);">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('privacy-policy', null)">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('terms-of-service', null)">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block mb-2" style="color: var(--bs-light);" onclick="showSection('contact', null)">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none d-block" style="color: var(--bs-light);" onclick="showSection('help-center', null)">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--bs-secondary);">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="small mb-2 mb-md-0" style="color: var(--bs-light);">
+                    &copy; <span id="year"></span> FitTrack. All rights reserved.
+                </div>
+                <div>
+                    <a href="#" class="me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="me-3"><i class="bi bi-github fs-5"></i></a>
+                    <a href="#" class="me-3"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class=""><i class="bi bi-instagram fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                    <video id="modalVideo" controls autoplay style="width:100%;border-radius:0.5rem;">
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Section navigation logic
+        function showSection(section, navEl) {
+            const sections = [
+                'hero', 'features', 'community', 'videos', 'nutrition',
+                'privacy-policy', 'terms-of-service', 'contact', 'help-center',
+                'forums', 'challenges', 'support', 'about', 'register',
+                // Add your article sections here:
+                'article-fitness', 'article-nutrition', 'article-mental', 'article-motivation'
+            ];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+            const showEl = document.getElementById(section);
+            if (showEl) showEl.style.display = '';
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => link.classList.remove('active'));
+            if (navEl) navEl.classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeLink = Array.from(document.querySelectorAll('.navbar-nav .nav-link'))
+                .find(link => link.getAttribute('onclick')?.includes("'hero'"));
+            showSection('hero', homeLink);
+
+            // Video modal logic
+            document.querySelectorAll('.video-overlay').forEach(function(overlay) {
+                overlay.addEventListener('click', function() {
+                    var videoSrc = this.getAttribute('data-video');
+                    var modal = new bootstrap.Modal(document.getElementById('videoModal'));
+                    var modalVideo = document.getElementById('modalVideo');
+                    modalVideo.querySelector('source').src = videoSrc;
+                    modalVideo.load();
+                    modal.show();
+                });
+            });
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                var modalVideo = document.getElementById('modalVideo');
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            });
+
+            // Video filter logic
+            document.querySelectorAll('#videoFilters button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#videoFilters button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    document.querySelectorAll('.video-card-item').forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        function showArticleSection(type) {
+            // Hide all article sections
+            document.getElementById('article-sections').style.display = '';
+            ['fitness','nutrition','mental','motivation'].forEach(function(key) {
+                var sec = document.getElementById('article-' + key);
+                if (sec) sec.style.display = 'none';
+            });
+            // Show the selected article section
+            var showSec = document.getElementById('article-' + type);
+            if (showSec) showSec.style.display = '';
+            // Scroll to the article section
+            showSec.scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</body>
+</html>

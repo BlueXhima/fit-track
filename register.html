@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | FitTrack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/icons/website-icon.webp">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the registration page */
+        :root {
+            --bs-primary: #4da6ff;     /* Soft sky blue */
+            --bs-secondary: #7fbfff;   /* Light steel blue */
+            --bs-success: #5cd6c0;     /* Aqua green */
+            --bs-info: #66d9ff;        /* Bright cyan */
+            --bs-warning: #ffd166;     /* Soft yellow */
+            --bs-danger: #ff6b6b;      /* Coral red */
+            --bs-light: #f0f8ff;       /* Alice blue */
+            --bs-dark: #2c3e50;        /* Deep navy */
+        }
+        body {
+            background: linear-gradient(135deg, var(--bs-light) 60%, #fffbe7 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+        .register-card {
+            border: none;
+            border-radius: 1.25rem;
+            box-shadow: 0 8px 32px 0 rgba(77,166,255,0.13), 0 1.5px 8px 0 rgba(44,62,80,0.08);
+            background: #fff;
+            padding: 1rem 1.2rem 1rem 1.2rem; /* Reduced padding */
+            max-width: 480px; /* Reduced width */
+            width: 100%;
+            margin: 1rem auto;
+        }
+        .register-icon {
+            background: linear-gradient(135deg, var(--bs-primary) 60%, var(--bs-success) 100%);
+            color: #fff;
+            border-radius: 50%;
+            width: 42px; /* Smaller icon */
+            height: 42px; /* Smaller icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.5rem auto;
+            box-shadow: 0 4px 18px 0 rgba(77,166,255,0.13);
+        }
+        .register-card h2 {
+            color: var(--bs-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem !important;
+        }
+        .register-card p {
+            font-size: 1rem;
+            margin-bottom: 1rem !important;
+        }
+        .form-label {
+            font-weight: 500;
+            color: var(--bs-dark);
+            font-size: 0.97rem;
+            margin-bottom: 0.2rem;
+        }
+        .form-control {
+            border-radius: 0.65rem;
+            border: 1.5px solid var(--bs-light);
+            background: var(--bs-light);
+            color: var(--bs-dark);
+            font-size: 0.97rem;
+            padding: 0.45rem 0.75rem;
+            min-height: 38px;
+        }
+        .form-check-label {
+            font-size: 0.8rem;
+            color: #555;
+        }
+        .register-btn {
+            background: var(--bs-primary);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, box-shadow 0.2s;
+            font-size: 1rem;
+            padding: 0.6rem 0;
+        }
+        .register-btn:hover, .register-btn:focus {
+            background: var(--bs-light);
+            color: var(--bs-primary);
+            border: 1px solid var(--bs-primary);
+        }
+        .login-link {
+            color: var(--bs-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+            color: var(--bs-dark);
+        }
+        .text-center.mt-2 {
+            margin-top: 0.7rem !important;
+        }
+        @media (max-width: 500px) {
+            .register-card {
+                padding: 1rem 0.3rem 0.7rem 0.3rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="register-card shadow-lg">
+            <div class="register-icon mt-3 mb-1">
+                <i class="bi bi-person-plus-fill"></i>
+            </div>
+            <h2 class="fw-bold text-center mb-2">Register</h2>
+            <p class="text-center text-muted mb-5">Create your FitTrack account</p>
+            <form>
+                <div class="row g-2 mb-2">
+                    <div class="col-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="John" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@email.com" required>
+                </div>
+                <div class="mb-2">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Create password" required>
+                </div>
+                <div class="mb-2">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Repeat password" required>
+                </div>
+                <div class="mb-3 mt-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">
+                        I agree to the <a href="javascript:void(0)" class="login-link" onclick="showSection('terms-of-service')">terms &amp; conditions</a> and <a href="javascript:void(0)" class="login-link" onclick="showSection('privacy-policy')">privacy policy</a>
+                    </label>
+                </div>
+                <div class="d-grid mb-2">
+                    <button type="submit" class="btn register-btn btn-lg rounded-pill shadow-sm">Register</button>
+                </div>
+            </form>
+            <div class="text-center mt-2">
+                <span class="text-muted">Already have an account?</span>
+                <a href="login.html" class="login-link ms-1">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius:1.2rem; box-shadow:0 8px 32px 0 rgba(77,166,255,0.13);">
+                <div class="modal-header" style="background: linear-gradient(90deg, var(--bs-primary) 60%, var(--bs-secondary) 100%); border-top-left-radius:1.2rem; border-top-right-radius:1.2rem;">
+                    <h5 class="modal-title text-white" id="termsModalLabel"><i class="bi bi-file-earmark-text me-2"></i>Terms &amp; Conditions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background: var(--bs-light); max-height:60vh; overflow-y:auto;">
+                    <h6 class="fw-bold mb-2">Welcome to FitTrack!</h6>
+                    <p>
+                        By accessing or using FitTrack, you agree to be bound by these Terms and Conditions. Please read them carefully.
+                    </p>
+                    <ul>
+                        <li><strong>Account Registration:</strong> You must provide accurate, current, and complete information during registration. You are responsible for maintaining the confidentiality of your account.</li>
+                        <li><strong>Use of Service:</strong> FitTrack is for personal, non-commercial use. Do not misuse, copy, or distribute any part of the service without permission.</li>
+                        <li><strong>Health Disclaimer:</strong> FitTrack provides general fitness and nutrition information. Always consult a healthcare professional before starting any fitness or nutrition program.</li>
+                        <li><strong>Prohibited Conduct:</strong> You agree not to use FitTrack for unlawful purposes or to harass, abuse, or harm others.</li>
+                        <li><strong>Termination:</strong> We reserve the right to suspend or terminate your account if you violate these terms.</li>
+                        <li><strong>Changes:</strong> We may update these terms at any time. Continued use of FitTrack means you accept the new terms.</li>
+                        <li><strong>Contact:</strong> For questions, contact us at <a href="mailto:support@fittrack.com" class="text-primary">support@fittrack.com</a>.</li>
+                    </ul>
+                    <p class="mb-0"><strong>Last updated:</strong> July 2025</p>
+                </div>
+                <div class="modal-footer" style="background: var(--bs-light); border-bottom-left-radius:1.2rem; border-bottom-right-radius:1.2rem;">
+                    <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius:1.2rem; box-shadow:0 8px 32px 0 rgba(77,166,255,0.13);">
+                <div class="modal-header" style="background: linear-gradient(90deg, var(--bs-primary) 60%, var(--bs-secondary) 100%); border-top-left-radius:1.2rem; border-top-right-radius:1.2rem;">
+                    <h5 class="modal-title text-white" id="privacyModalLabel"><i class="bi bi-shield-lock-fill me-2"></i>Privacy Policy</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background: var(--bs-light); max-height:60vh; overflow-y:auto;">
+                    <h6 class="fw-bold mb-2">Your Privacy Matters</h6>
+                    <p>
+                        FitTrack is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information.
+                    </p>
+                    <ul>
+                        <li><strong>Information We Collect:</strong> We collect information you provide during registration, such as your name, email, and fitness data.</li>
+                        <li><strong>How We Use Your Data:</strong> Your data is used to personalize your experience, improve our services, and communicate with you.</li>
+                        <li><strong>Data Security:</strong> We use industry-standard measures to protect your data. However, no method is 100% secure.</li>
+                        <li><strong>Sharing Information:</strong> We do not sell or share your personal information with third parties except as required by law or with your consent.</li>
+                        <li><strong>Cookies:</strong> FitTrack uses cookies to enhance your experience. You can manage cookie preferences in your browser settings.</li>
+                        <li><strong>Children's Privacy:</strong> FitTrack is not intended for users under 16. We do not knowingly collect data from children.</li>
+                        <li><strong>Your Rights:</strong> You may access, update, or delete your information at any time. Contact us for assistance.</li>
+                        <li><strong>Policy Updates:</strong> We may update this policy. Changes will be posted here with a new effective date.</li>
+                        <li><strong>Contact:</strong> For privacy questions, email <a href="mailto:privacy@fittrack.com" class="text-success">privacy@fittrack.com</a>.</li>
+                    </ul>
+                    <p class="mb-0"><strong>Effective date:</strong> July 2025</p>
+                </div>
+                <div class="modal-footer" style="background: var(--bs-light); border-bottom-left-radius:1.2rem; border-bottom-right-radius:1.2rem;">
+                    <button type="button" class="btn btn-success rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show modals when links are clicked
+        function showSection(section) {
+            if (section === 'terms-of-service') {
+            var termsModal = new bootstrap.Modal(document.getElementById('termsModal'));
+            termsModal.show();
+            } else if (section === 'privacy-policy') {
+            var privacyModal = new bootstrap.Modal(document.getElementById('privacyModal'));
+            privacyModal.show();
+            }
+    }
+    </script>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
